@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: my-frontend-app
-        image: your-ecr-image-uri # Placeholder for the image URI
+        image: ${{ steps.ecr-image-uri.outputs.image-uri }} # Placeholder for the image URI
         ports:
         - containerPort: 80
 ---
