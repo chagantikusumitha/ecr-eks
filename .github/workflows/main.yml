@@ -5,7 +5,7 @@ on:
     branches: [main]
 
 env:
-  ECR_REPOSITORY: kubernetes
+  ECR_REPOSITORY: my_cluster
   AWS_REGION: us-east-1
 
 jobs:
@@ -40,7 +40,7 @@ jobs:
         run: echo "::set-output name=image-uri::$ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG"
 
       - name: Configure kubectl
-        run: aws eks --region ${{ env.AWS_REGION }} update-kubeconfig --name Kubernetes-demo2
+        run: aws eks --region ${{ env.AWS_REGION }} update-kubeconfig --name my-cluster
 
       - name: Deploy to EKS
         run: |
