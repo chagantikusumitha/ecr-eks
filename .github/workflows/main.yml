@@ -5,7 +5,7 @@ on:
     branches: [main]
 
 env:
-  ECR_REPOSITORY: my_cluster
+  ECR_REPOSITORY: docker
   AWS_REGION: us-east-1
 
 jobs:
